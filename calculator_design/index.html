@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Fom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<div class="container">
+    <div class="tabes">
+        <h1>Register Form</h1>
+    </div>
+
+    <div class="input-group">
+        <label for="#">Full Name</label>
+        <input type="text" placeholder="Purna Khatri" id="name">
+    </div>
+
+    <div class="input-group">
+        <label for="#">Phone</label>
+        <input type="text" placeholder="+977 9829839069" id="phone">
+    </div>
+
+    <div class="input-group">
+        <label for="#">Email</label>
+        <input type="email" placeholder="yo@gmail.com" id="email">
+    </div>
+
+    <div class="input-group">
+        <label for="#">Address</label>
+        <input type="text" placeholder="Kathmandu, Nepal" id="address">
+    </div>
+
+    <div class="input-group">
+        <label for="#">Password</label>
+        <input type="password" id="password">
+    </div>
+    <div class="input-group">
+        <label for="#">Confirm password</label>
+        <input type="password"  id="confirmPassword">
+         <small id="passwordError" ></small>
+    </div>
+
+    <button class="register-btn" onclick="registerUser()">Register</button>
+</div>
+<!-- <div class="input-group">
+    <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password
+</div> -->
+
+<script>
+    function registerUser(){
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const passwordError = document.getElementById('passwordError');
+
+        if( !name || !phone || !email || !address || !password || !confirmPassword){
+            alert("Please fill out all fields :");
+            return;
+        }
+        if(password !== confirmPassword){
+           passwordError.textContent = "Passwords do not match!";
+            return;
+        }
+        alert(`Welcome $(name) ! Registration Successfully`);
+    }
+    document.getElementById('password').addEventListener('input', checkPasswordMatch);
+document.getElementById('confirmPassword').addEventListener('input', checkPasswordMatch);
+
+function checkPasswordMatch() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const passwordError = document.getElementById('passwordError');
+
+    if (password && confirmPassword) { // Only check if both fields have values
+        if (password === confirmPassword) {
+            passwordError.textContent = ''; // Clear error if passwords match
+        } else {
+            passwordError.textContent = "Passwords do not match!";
+        }
+    } else {
+        passwordError.textContent = ''; // Clear error if either field is empty
+    }
+}
+    
+</script>
+
+</body>
+</html>

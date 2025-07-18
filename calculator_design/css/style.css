@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-feature-settings: "salt";
+}
+
+body{
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150vh;
+
+}
+
+.container{
+    padding: 10px 20px;
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.5);
+    width: 500px;
+    height: 800px;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+
+}
+.container h1{
+    margin-top: 20px;
+}
+.input-group{
+    margin-top: 20px;
+
+}
+.input-group label{
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    
+}
+.input-group input{
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 0.9rem;
+
+   
+}
+
+.input-group input::placeholder{
+    font-family: cursive;
+    color: rgba(24, 119, 242, 0.4);
+}
+.fa-solid{
+    font-size: 1rem;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+   
+
+}
+
+.container button{
+    background-color: #1877F2;
+    color: white;
+    padding: 15px;
+    width: 60%;
+    margin-top: 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+
+}
+.container button:hover{
+    background-color: #024091;
+    color: white;
+    transition: 0.5s;
+    border: 1px solid red;
+}
+.input-group input:hover{
+    border: 1px solid red;
+    transition: 0.5s;
+
+}
+#passwordError {
+    font-size: 14px;
+    color: red;
+    margin-top: 4px;
+    display: block;
+}
